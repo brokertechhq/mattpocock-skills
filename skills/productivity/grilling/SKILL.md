@@ -5,23 +5,25 @@ description: Grill the user relentlessly about a plan, decision, or idea. Use wh
 
 Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.
 
-Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
+Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question, and give your best guess at the user's answer. Then wait for the user's answers before the next round.
+
+A question probes what the user wants and why: the outcome they are after, what they would see, what worries them, what they would trade. Ask it as if you care about the answer. It is never a proposal for the user to approve. A decision that is yours to make, such as an engineering call, is not a question: state it as a decision before the round, with its reason, and let the user disagree.
 
 Format a round like so:
 
 ```
 ❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
 
-➡️ <your recommended answer>
+➡️ <your best guess at the user's answer>
 
 ---
 
 ❓ **Q2** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
 
-➡️ <your recommended answer>
+➡️ <your best guess at the user's answer>
 ```
 
-Word each question so "yes" accepts your recommended answer.
+Do not word a question so that "yes" accepts your proposal. If the user's answer could only be yes or no to your plan, it is a decision, not a question.
 
 Each round the user answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round. A question whose answer depends on another question still open in this round belongs to a _later_ round, not this one.
 
